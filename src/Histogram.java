@@ -5,12 +5,9 @@
 * This is the Histogram class it will read file input from the file name given by the user through cli
 * and output a formatted histogram
 */
-import org.jetbrains.annotations.NotNull;
-
 import java.io.FileNotFoundException;
 import java.util.*;
 import java.io.File;
-import java.util.logging.FileHandler;
 
 public class Histogram {
 
@@ -23,7 +20,6 @@ public class Histogram {
         read(Existing, letterCount, getFileName());
         sort(letters, letterCount);
         display(letters, letterCount);
-
     }
 
     //Method to get filename from cli
@@ -103,16 +99,45 @@ public class Histogram {
                 letters = letters + letter[marker++];
             }
             if(letterCount > 0){
-                System.out.println(outputString(letterCount, letters));
+                System.out.println(outputString(letterCount, alphabetical(letters)));
             }
         }
         System.out.println("----------------");
+
+        //print the last thing
+        String theEnd = "";
+        for (int i = letter.length -1 ; i >=0; i--){
+            theEnd = theEnd + letter[i];
+        }
+        System.out.println(String.format("%16s", theEnd));
     }
     public static String outputString(int num, String letters){
         String s;
         s = String.format("|%3d|",num);
         s = s + String.format("%11s", new StringBuilder(letters).reverse().toString());
         return s;
+    }
+    public static String alphabetical(String s){
+        char [] chArr = s.toCharArray();
+        boolean swap;
+        char tempChar;
+        do{
+            swap = false;
+            for (int i = 0 ; i < chArr.length - 1 ; i++ ){
+                if (chArr[i] < chArr[i+1]){
+                    swap = true;
+                    tempChar = chArr[i];
+                    chArr[i] = chArr[i+1];
+                    chArr[i+1] = tempChar;
+                }
+            }
+        }while (swap == true);
+        String sorted="";
+        for (char letter : chArr){
+            sorted = sorted + letter;
+        }
+        return sorted;
+
     }
 
 }
