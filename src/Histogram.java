@@ -81,16 +81,20 @@ public class Histogram {
     public static void display(char[] letter, int[] count) {
         //print section 1 all occurrences in descending order
         System.out.println("Char Occurrence:");
-        for (int i = 0; i < count.length; i++) {
-            if (count[i] > 0) {
+        //find lowest occurrence
+        int marker = 0;
+        while (marker < 10 && count[marker+1] != 0 ){
+            marker++;
+        }
+        //print from marker down
+        for (int i = marker; i >= 0; i--) {
                 System.out.println(letter[i] + " " + count[i]);
-            }
         }
 
         //print section 2
-        System.out.println("\n\n" + "================");
+        System.out.println("\n" + "================");
         //loop through the count array
-        int marker = 0;
+        marker = 0;
         String letters = "";
         int letterCount = count [0];
         while (marker < 11 && count[marker] !=0){
