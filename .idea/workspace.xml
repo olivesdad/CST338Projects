@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9836284-d337-47cb-abcb-64625d6a6110" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/histogram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/histogram.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/tq2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/tq3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/tq4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/tq5.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/histogram/Histogram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/histogram/Histogram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Histogram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Histogram.java" afterDir="false" />
     </list>
@@ -70,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635617187139</updated>
-      <workItem from="1635617189271" duration="8127000" />
+      <workItem from="1635617189271" duration="13660000" />
     </task>
     <servers />
   </component>
