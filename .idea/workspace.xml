@@ -4,7 +4,7 @@
     <list default="true" id="d9836284-d337-47cb-abcb-64625d6a6110" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/histogram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/histogram.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/tq1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/histogram/Histogram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/histogram/Histogram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Histogram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Histogram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +29,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -66,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635617187139</updated>
-      <workItem from="1635617189271" duration="5254000" />
+      <workItem from="1635617189271" duration="8127000" />
     </task>
     <servers />
   </component>
