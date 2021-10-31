@@ -10,12 +10,10 @@ import java.util.*;
 import java.io.File;
 
 public class Histogram {
-
     public static void main(String[] args) {
         //variables
         char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'};
         int[] letterCount = new int[11];
-
         //~~~~~~~~~~//do the things//~~~~~~~~~~~~//
         read(letters, letterCount, getFileName());
         sort(letters, letterCount);
@@ -28,9 +26,9 @@ public class Histogram {
         System.out.print("Enter file name: ");
         return scanner.nextLine();
     }
+
     //read file and populate letter count and letter arrays idk why we need letter array. It is unused but passed because requirements state it must be
     public static void read(char[] letter, int[] letterCount, String filename) {
-
         //make file object
         File file = new File(filename);
         int count = 0;
@@ -40,13 +38,11 @@ public class Histogram {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
         //scan read through each line of file and increment occurrence of letter
         do {
             assert scanner != null;
             letterCount[(int) scanner.nextLine().charAt(0) - 65]++;
         } while (scanner.hasNext());
-
     }
 
     //pass the letter array and the count array, order them both from lowest to highest
@@ -80,7 +76,6 @@ public class Histogram {
             }
         }
     }
-
     public static void display(char[] letter, int[] count) {
         //~~~~~~~//Print the First Style thing~~~~~~~~~~~//
         System.out.println("Char Occurrence:");
@@ -109,7 +104,6 @@ public class Histogram {
             }
         }
         System.out.println("----------------");
-
         //~~~~~//just print the sorted letter array reversed//~~~~~~~//
         StringBuilder theEnd = new StringBuilder();//intellij says I should use stringbuilder
         for (int i = letter.length -1 ; i >=0; i--){
