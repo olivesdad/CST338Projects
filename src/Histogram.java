@@ -13,11 +13,11 @@ public class Histogram {
 
     public static void main(String[] args) {
         //variables
-        char[] Existing = new char[200];
         char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'};
         int[] letterCount = new int[11];
 
-        read(Existing, letterCount, getFileName());
+        //~~~~~~~~~~//do the things//~~~~~~~~~~~~//
+        read(letters, letterCount, getFileName());
         sort(letters, letterCount);
         display(letters, letterCount);
     }
@@ -28,7 +28,7 @@ public class Histogram {
         System.out.print("Enter file name: ");
         return scanner.nextLine();
     }
-    //read file and populate letter count and letter arrays
+    //read file and populate letter count and letter arrays idk why we need letter array. It is unused but passed because requirements state it must be
     public static void read(char[] letter, int[] letterCount, String filename) {
 
         //make file object
@@ -41,17 +41,12 @@ public class Histogram {
             e.printStackTrace();
         }
 
-        //populate letter array //pull char 1 from some string
-        while (true) {
-            assert scanner != null; //intellij told me to do this. idk why it works ¯\_(ツ)_/¯
-            if (!scanner.hasNext()) break;
-            letter[count++] = scanner.nextLine().charAt(0);
-        }
-
-        //use ascii number to populate letter count array
-        for (int i = 0; i < count; i++) {
-            letterCount[(int) letter[i] - 65]++;
-        }
+        //scan read through each line of file and increment occurrence of letter
+        do {
+            assert scanner != null;
+            letterCount[(int) scanner.nextLine().charAt(0) - 65]++;
+        } while (scanner.hasNext());
+        
     }
 
     //pass the letter array and the count array, order them both from lowest to highest
