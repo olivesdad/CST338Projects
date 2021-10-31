@@ -28,7 +28,6 @@ public class Histogram {
         System.out.print("Enter file name: ");
         return scanner.nextLine();
     }
-
     //read file and populate letter count and letter arrays
     public static void read(char[] letter, int[] letterCount, String filename) {
 
@@ -42,7 +41,7 @@ public class Histogram {
             e.printStackTrace();
         }
 
-        //populate letter array
+        //populate letter array //pull char 1 from some string
         while (scanner.hasNext()) {
             letter[count++] = scanner.nextLine().charAt(0);
         }
@@ -72,6 +71,17 @@ public class Histogram {
                 }
             }
         } while (swap);
+        //loop to sort letter array
+        int start = 0;
+        for (int mark = 0 ; mark < letterCount.length; mark++ ){
+            if (mark == letterCount.length - 1){
+                sectionSort(letter, start, mark);
+            }
+            else if (letterCount[mark] != letterCount[mark+1]){
+                sectionSort(letter, start,mark);
+                start = mark + 1;
+            }
+        }
     }
 
     public static void display(char[] letter, int[] count) {
@@ -86,20 +96,19 @@ public class Histogram {
         for (int i = marker; i >= 0; i--) {
                 System.out.println(letter[i] + " " + count[i]);
         }
-
         //print section 2
         System.out.println("\n" + "================");
         //loop through the count array
         marker = 0;
         String letters = "";
-        int letterCount = count [0];
-        while (marker < 11 && count[marker] !=0){
+        int letterCount = count [0];//start here
+        while (marker < 11 && count[marker] !=0){ //<~iterate through the entire char array of A-K and add any letters that occur to the string
             letterCount = count[marker];
             while (letterCount == count[marker] && marker < 11){
-                letters = letters + letter[marker++];
+                letters = letters + letter[marker++]; //at letter to string
             }
-            if(letterCount > 0){
-                System.out.println(outputString(letterCount, alphabetical(letters)));
+            if(letterCount > 0){ //if there was more than 0 of this letter print the number of occurrences. We need to sort after all strings are added.
+                System.out.println(outputString(letterCount, letters));
             }
         }
         System.out.println("----------------");
@@ -111,33 +120,27 @@ public class Histogram {
         }
         System.out.println(String.format("%16s", theEnd));
     }
+    //takes the letter count string and the letters string, formats them and returns string in the required format
     public static String outputString(int num, String letters){
         String s;
         s = String.format("|%3d|",num);
         s = s + String.format("%11s", new StringBuilder(letters).reverse().toString());
         return s;
     }
-    public static String alphabetical(String s){
-        char [] chArr = s.toCharArray();
+    //method to alphabetically sort a section of an array from start to end
+    public static void sectionSort(char[] letters, int start, int end){
         boolean swap;
-        char tempChar;
-        do{
+        char tempLetter;
+        do{ //might as well keep using bubble sort
             swap = false;
-            for (int i = 0 ; i < chArr.length - 1 ; i++ ){
-                if (chArr[i] < chArr[i+1]){
+            for (int i = start; i < end; i++){
+                if (letters[i] < letters[i+1]){
+                    tempLetter = letters[i+1];
+                    letters[i+1] = letters[i];
+                    letters [i] = tempLetter;
                     swap = true;
-                    tempChar = chArr[i];
-                    chArr[i] = chArr[i+1];
-                    chArr[i+1] = tempChar;
                 }
             }
-        }while (swap == true);
-        String sorted="";
-        for (char letter : chArr){
-            sorted = sorted + letter;
-        }
-        return sorted;
-
+        }while (swap);
     }
-
 }
