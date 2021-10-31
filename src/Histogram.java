@@ -42,7 +42,9 @@ public class Histogram {
         }
 
         //populate letter array //pull char 1 from some string
-        while (scanner.hasNext()) {
+        while (true) {
+            assert scanner != null; //intellij told me to do this. idk why it works ¯\_(ツ)_/¯
+            if (!scanner.hasNext()) break;
             letter[count++] = scanner.nextLine().charAt(0);
         }
 
@@ -118,7 +120,7 @@ public class Histogram {
         for (int i = letter.length -1 ; i >=0; i--){
             theEnd = theEnd + letter[i];
         }
-        System.out.println(String.format("%16s", theEnd));
+        System.out.printf("%16s%n", theEnd);
     }
     //takes the letter count string and the letters string, formats them and returns string in the required format
     public static String outputString(int num, String letters){
