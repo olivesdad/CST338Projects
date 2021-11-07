@@ -40,7 +40,7 @@ public class Histogram {
         }
         //scan read through each line of file and increment occurrence of letter
         do {
-            assert scanner != null;
+            assert scanner != null;//intellij says i need this?
             letterCount[(int) scanner.nextLine().charAt(0) - 65]++;
         } while (scanner.hasNext());
     }
