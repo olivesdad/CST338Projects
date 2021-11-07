@@ -30,14 +30,17 @@ public class Markov {
             e.printStackTrace();
             System.out.print("File not found");
         }
-        while(scanner != null && scanner.hasNext()){
+        while(scanner.hasNext()){
             addLine(scanner.nextLine());
         }
     }
     public void addLine(String line){ //checks that the string isnt empty then passes each word to add word
-        if (line != null && line.length() > 0) {
+        if (line.length() > 0) {
+            line = line.trim();
             for (String word : line.split(" ")){
-                addWord(word);
+                if(word.length() > 0) {
+                    addWord(word);
+                }
             }
         }
     }
@@ -52,37 +55,50 @@ public class Markov {
             }
             words.get(prevWord).add(word); //add new word to the array list
         }
-//        if(endsWithPunctuation(word)){// check if this word ends with punctuation
-//            prevWord = PUNCTUATION; //if it did set prev word to punctuation
-//        }
-//        else prevWord = word; // otherwise advance previous word to current word
-
+        if (endsWithPunctuation(word)) prevWord = PUNCTUATION ; //check if word ends with punctuation. if it does indicte it with prev word
+        else prevWord = word; //otherwise just advance prevWOrd.
     }
 
     public boolean endsWithPunctuation(String word){
         int chk = PUNCTUATION_MARKS.indexOf(word.charAt(word.length()-1));
-        System.out.println(word.charAt(word.length()-1));
-        System.out.println(chk);
         if (chk == -1) return false;
         else return true;
     }
 
-    public String randomWord(){
-        return "random word";
+    public String randomWord(String word){
+        String nextWord;
+        int wc = words.get(word).size();
+        nextWord = words.get(word).get((int) Math.floor(Math.random() * (wc)));
+       // System.out.println((int) Math.floor(Math.random()) * (wc+1));
+        return nextWord;
     }
 
     public String getSentence(){
-        return "Sentence";
+        String s = "";
+        String word;
+        boolean end = false;
+       // pick random word from punctuation list
+        int wc = words.get(PUNCTUATION).size();
+        if (wc < 1) return ("No words found");
+        //chooses random word from punctuation list
+        word = words.get(PUNCTUATION).get((int) Math.floor(Math.random() * (wc)));
+        //loop will continue until we hit punctuation word.
+        while (!end) {
+            if (!endsWithPunctuation(word)) {
+                s = s + word + " ";
+                word = randomWord(word);
+            } else {
+                s = s + word;
+                end = true;
+            }
+        }
+        System.out.println("S: " + s);
+    return s;
     }
 
     @Override
     public String toString() {
-        return "Markov{" +
-                "PUNCTUATION='" + PUNCTUATION + '\'' +
-                ", PUNCTUATION_MARKS='" + PUNCTUATION_MARKS + '\'' +
-                ", words=" + words +
-                ", prevWord='" + prevWord + '\'' +
-                '}';
+        return words.toString();
     }
 
     //    public static void main (String args []){

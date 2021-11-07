@@ -17,6 +17,8 @@ class MarkovTest {
 
     @org.junit.jupiter.api.Test
     void getWords() {
+        markov.addLine("hello my name is drew. do you like chicken? i like chicken because chicken tastes like chicken");
+        System.out.println(markov);
     }
 
     @org.junit.jupiter.api.Test
@@ -33,8 +35,8 @@ class MarkovTest {
 
     @org.junit.jupiter.api.Test
     void endsWithPunctuation() {
-        assertEquals(markov.endsWithPunctuation("fart"), false);
-        assertEquals(markov.endsWithPunctuation("fart!"), true);
+        assertEquals(markov.endsWithPunctuation("hello"), false);
+        assertEquals(markov.endsWithPunctuation("Hello?!"), true);
     }
 
     @org.junit.jupiter.api.Test
@@ -43,9 +45,12 @@ class MarkovTest {
 
     @org.junit.jupiter.api.Test
     void getSentence() {
+        markov.addLine("chicken bake chicken steak. so good.");
+        markov.getSentence();
     }
 
     @org.junit.jupiter.api.Test
     void testToString() {
+        markov.toString();
     }
 }
