@@ -17,8 +17,8 @@ public class Markov {
     }
 
     public List getWords(){ //THIS DOESNT DO ANYTHING YET
-        List<String> wordLisd = new ArrayList<>();
-        return wordLisd;
+        List<String> wordList = new ArrayList<>();
+        return wordList;
     }
 
     public void addFromFile(String s){ //String s is file name. Reads each line into addLine method
@@ -43,19 +43,19 @@ public class Markov {
     }
 
     public void addWord(String word){
-        if (prevWord == PUNCTUATION){
-            words.get(PUNCTUATION).add(word);
+        if (Objects.equals(prevWord, PUNCTUATION)){ //checks if previous word ended with punctuation
+            words.get(PUNCTUATION).add(word);//if it did, this word will be added to Punctuation array
         }
         else {
-            if (!words.containsKey(prevWord)){
-                words.put(prevWord, new ArrayList<>());
+            if (!words.containsKey(prevWord)){ //check if yhe previous word is  NOYa key
+                words.put(prevWord, new ArrayList<>());// if it previouse word is not a key make it a key
             }
-            words.get(prevWord).add(word);
+            words.get(prevWord).add(word); //add new word to the array list
         }
-        if(endsWithPunctuation(word)){
-            prevWord = PUNCTUATION;
+        if(endsWithPunctuation(word)){// check if this word ends with punctuation
+            prevWord = PUNCTUATION; //if it did set prev word to punctuation
         }
-        else prevWord = word; 
+        else prevWord = word; // otherwise advance previous word to current word
 
     }
 
