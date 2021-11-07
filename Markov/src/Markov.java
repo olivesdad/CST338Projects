@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Markov {
     public final String PUNCTUATION = "__$";
-    public final String PUNCTUATION_MARKS="";
+    public final String PUNCTUATION_MARKS="!?.";
 
     private HashMap<String, ArrayList<String>> words;
     private String prevWord=PUNCTUATION;
@@ -52,19 +52,41 @@ public class Markov {
             }
             words.get(prevWord).add(word); //add new word to the array list
         }
-        if(endsWithPunctuation(word)){// check if this word ends with punctuation
-            prevWord = PUNCTUATION; //if it did set prev word to punctuation
-        }
-        else prevWord = word; // otherwise advance previous word to current word
+//        if(endsWithPunctuation(word)){// check if this word ends with punctuation
+//            prevWord = PUNCTUATION; //if it did set prev word to punctuation
+//        }
+//        else prevWord = word; // otherwise advance previous word to current word
 
     }
 
     public boolean endsWithPunctuation(String word){
-    return false;
+        int chk = PUNCTUATION_MARKS.indexOf(word.charAt(word.length()-1));
+        System.out.println(word.charAt(word.length()-1));
+        System.out.println(chk);
+        if (chk == -1) return false;
+        else return true;
     }
 
-//    public static void main (String args []){
-//
+    public String randomWord(){
+        return "random word";
+    }
+
+    public String getSentence(){
+        return "Sentence";
+    }
+
+    @Override
+    public String toString() {
+        return "Markov{" +
+                "PUNCTUATION='" + PUNCTUATION + '\'' +
+                ", PUNCTUATION_MARKS='" + PUNCTUATION_MARKS + '\'' +
+                ", words=" + words +
+                ", prevWord='" + prevWord + '\'' +
+                '}';
+    }
+
+    //    public static void main (String args []){
+//    endsWithPunctuation("booboo");
 //    }
 }
 
