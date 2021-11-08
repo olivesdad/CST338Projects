@@ -92,7 +92,7 @@ public class Markov {
                 end = true;
             }
         }
-        System.out.println("S: " + s);
+        prevWord = PUNCTUATION;
     return s;
     }
 
