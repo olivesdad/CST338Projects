@@ -1,3 +1,9 @@
+/*
+*Andrew Shiraki
+* 2021-11-07
+* This is MarkovTest. It tests some of methods of the markov class. We use assert in some tests but for others, I found it
+* more useful to just use sout to make sure it's doing what I think it's doing
+ */
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -22,19 +28,6 @@ class MarkovTest {
     }
 
     @org.junit.jupiter.api.Test
-    void addFromFile() {
-
-    }
-
-    @org.junit.jupiter.api.Test
-    void addLine() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void addWord() {
-    }
-
-    @org.junit.jupiter.api.Test
     void endsWithPunctuation() {
         assertEquals(markov.endsWithPunctuation("hello"), false);
         assertEquals(markov.endsWithPunctuation("Hello?!"), true);
@@ -54,6 +47,7 @@ class MarkovTest {
 
     @org.junit.jupiter.api.Test
     void testToString() {
-        markov.toString();
+        markov.addLine("Hello. This is the toString line. I'm going to put the string to string.");
+        System.out.println( "to string: " +  markov.toString());
     }
 }

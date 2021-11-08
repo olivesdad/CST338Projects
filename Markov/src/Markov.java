@@ -1,3 +1,8 @@
+/*
+*Andrew Shiraki
+*2021-11-07
+* This is the Markov class. It reads in lines from a text file, populates some hash map and can return random sentences
+ */
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -99,9 +104,5 @@ public class Markov {
     public String toString() {
         return words.toString();
     }
-
-    //    public static void main (String args []){
-//    endsWithPunctuation("booboo");
-//    }
 }
 
