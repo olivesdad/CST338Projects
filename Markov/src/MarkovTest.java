@@ -12,17 +12,18 @@ class MarkovTest {
 
     @AfterEach
     void tearDown() {
-
+    markov = null;
     }
 
     @org.junit.jupiter.api.Test
     void getWords() {
         markov.addLine("hello my name is drew. do you like chicken? i like chicken because chicken tastes like chicken");
-        System.out.println(markov);
+        System.out.println(markov.getWords());
     }
 
     @org.junit.jupiter.api.Test
     void addFromFile() {
+
     }
 
     @org.junit.jupiter.api.Test
@@ -41,12 +42,14 @@ class MarkovTest {
 
     @org.junit.jupiter.api.Test
     void randomWord() {
+        markov.addLine("hello my name is drew. Do you like chicken? I like chicken because chicken tastes like chicken. Also my dog is called olive and I like mechanical keyboards.");
+        System.out.println("random word:" + markov.randomWord("chicken"));
     }
 
     @org.junit.jupiter.api.Test
     void getSentence() {
-        markov.addLine("chicken bake chicken steak. so good.");
-        markov.getSentence();
+        markov.addLine("hello my name is drew. Do you like chicken? I like chicken because chicken tastes like chicken. Also my dog is called olive and I like mechanical keyboards.");
+        System.out.println(markov.getSentence());
     }
 
     @org.junit.jupiter.api.Test

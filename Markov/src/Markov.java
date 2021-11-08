@@ -16,9 +16,8 @@ public class Markov {
     prevWord=PUNCTUATION;
     }
 
-    public List getWords(){ //THIS DOESNT DO ANYTHING YET
-        List<String> wordList = new ArrayList<>();
-        return wordList;
+    public HashMap getWords(){ //What is this for?
+        return words;
     }
 
     public void addFromFile(String s){ //String s is file name. Reads each line into addLine method
@@ -35,8 +34,8 @@ public class Markov {
         }
     }
     public void addLine(String line){ //checks that the string isnt empty then passes each word to add word
+        line = line.trim();
         if (line.length() > 0) {
-            line = line.trim();
             for (String word : line.split(" ")){
                 if(word.length() > 0) {
                     addWord(word);
