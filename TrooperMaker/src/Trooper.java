@@ -98,7 +98,7 @@ public abstract class Trooper {
     public abstract double march(double duration);
 
     public boolean attack(Trooper target, int roll) {
-        System.out.println(this + " is targeting " + target +"\n" + this +" rolled a "+ roll);
+        System.out.println(this + " is attacking " + target);
         if (this == target || roll == 1) {
             System.out.println(target + " is targeting itself!");
             System.out.println(target + " rolled a " + roll + " and hurt itself in the confusion");
@@ -106,7 +106,7 @@ public abstract class Trooper {
 
         } else if (this instanceof StormTrooper) {
             if (target instanceof RebelTrooper) {
-                System.out.println( this + " rolled " + roll + " against the rebel scum.");
+                System.out.println( "rolled " + roll + " against the rebel scum.");
                 if (roll > 10 && roll % 2 == 0) return true;
             } else if (target instanceof StormTrooper) {
                 System.out.println("No treason in the ranks!");
@@ -117,7 +117,7 @@ public abstract class Trooper {
             }
         } else {
             if (target instanceof StormTrooper) {
-                System.out.println(this + " rolled " + roll + " against the imperial scum.");
+                System.out.println("rolled " + roll + " against the imperial scum.");
                 if (roll > 5 && roll % 2 != 0) return true;
             } else if (this instanceof RebelTrooper) {
                 System.out.println("Imperial Spy!");

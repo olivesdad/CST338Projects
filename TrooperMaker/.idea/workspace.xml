@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb27f5cd-433c-4db5-a3f8-f38ad7440a6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RebelTrooper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StormTrooper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StormTrooperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Trooper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MidtermFA19.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MidtermFA19.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trooper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trooper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +70,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
@@ -182,7 +176,7 @@
       <workItem from="1571339617482" duration="8000" />
       <workItem from="1583784193687" duration="648000" />
       <workItem from="1583785018971" duration="272000" />
-      <workItem from="1636440472368" duration="8634000" />
+      <workItem from="1636440472368" duration="9316000" />
     </task>
     <servers />
   </component>
