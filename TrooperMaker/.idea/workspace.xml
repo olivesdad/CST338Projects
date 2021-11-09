@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fb27f5cd-433c-4db5-a3f8-f38ad7440a6c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1Rsq930hB9qSV0Le5N39iSYctst" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="Trooper" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="Trooper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TrooperTest">
+    <configuration name="AStarWar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AStarWar" />
+      <module name="MidtermFA19" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrooperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MidtermFA19" />
+      <useClassPathOnly />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="13" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrooperTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrooperTest.getSoldierCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MidtermFA19" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrooperTest" />
+      <option name="METHOD_NAME" value="getSoldierCount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrooperTest.testMarch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MidtermFA19" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrooperTest" />
+      <option name="METHOD_NAME" value="testMarch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrooperTest.testSetNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MidtermFA19" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrooperTest" />
+      <option name="METHOD_NAME" value="testSetNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.AStarWar" />
+      <item itemvalue="JUnit.TrooperTest" />
+      <item itemvalue="JUnit.TrooperTest.getSoldierCount" />
+      <item itemvalue="JUnit.TrooperTest.testMarch" />
+      <item itemvalue="JUnit.TrooperTest.testSetNumber" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TrooperTest" />
+        <item itemvalue="JUnit.TrooperTest.getSoldierCount" />
+        <item itemvalue="JUnit.TrooperTest.testMarch" />
+        <item itemvalue="Application.AStarWar" />
+        <item itemvalue="JUnit.TrooperTest.testSetNumber" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb27f5cd-433c-4db5-a3f8-f38ad7440a6c" name="Default Changelist" comment="" />
+      <created>1564607410706</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1564607410706</updated>
+      <workItem from="1564607412050" duration="10315000" />
+      <workItem from="1565209468928" duration="75000" />
+      <workItem from="1570465997689" duration="1010000" />
+      <workItem from="1570551656582" duration="293000" />
+      <workItem from="1570900566358" duration="10277000" />
+      <workItem from="1571008934495" duration="233000" />
+      <workItem from="1571009593229" duration="166000" />
+      <workItem from="1571241727010" duration="239000" />
+      <workItem from="1571338149363" duration="180000" />
+      <workItem from="1571339617482" duration="8000" />
+      <workItem from="1583784193687" duration="648000" />
+      <workItem from="1583785018971" duration="272000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="218" y="126" width="1443" height="755" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583790078850">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="218" y="126" width="1443" height="755" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/-1680.23.1680.1027@0.23.1920.1057" timestamp="1583790078850" />
+    <state x="235" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1583784198934">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="235" y="210" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1583784198934" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
