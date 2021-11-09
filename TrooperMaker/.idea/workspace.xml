@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb27f5cd-433c-4db5-a3f8-f38ad7440a6c" name="Default Changelist" comment="" />
+    <list default="true" id="fb27f5cd-433c-4db5-a3f8-f38ad7440a6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RebelTrooper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StormTrooper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StormTrooperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Trooper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MidtermFA19.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MidtermFA19.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,13 +33,24 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Rsq930hB9qSV0Le5N39iSYctst" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -37,6 +58,9 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -56,17 +80,30 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="Trooper" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.TrooperTest">
+  <component name="RunManager" selected="Application.AStarWar">
     <configuration name="AStarWar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AStarWar" />
       <module name="MidtermFA19" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StormTrooperTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MidtermFA19" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StormTrooperTest" />
+      <option name="METHOD_NAME" value="testToString" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,33 +142,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TrooperTest.testSetNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MidtermFA19" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TrooperTest" />
-      <option name="METHOD_NAME" value="testSetNumber" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.AStarWar" />
       <item itemvalue="JUnit.TrooperTest" />
       <item itemvalue="JUnit.TrooperTest.getSoldierCount" />
       <item itemvalue="JUnit.TrooperTest.testMarch" />
-      <item itemvalue="JUnit.TrooperTest.testSetNumber" />
+      <item itemvalue="JUnit.StormTrooperTest.testToString" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AStarWar" />
+        <item itemvalue="JUnit.StormTrooperTest.testToString" />
         <item itemvalue="JUnit.TrooperTest" />
         <item itemvalue="JUnit.TrooperTest.getSoldierCount" />
         <item itemvalue="JUnit.TrooperTest.testMarch" />
-        <item itemvalue="Application.AStarWar" />
-        <item itemvalue="JUnit.TrooperTest.testSetNumber" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -154,21 +182,23 @@
       <workItem from="1571339617482" duration="8000" />
       <workItem from="1583784193687" duration="648000" />
       <workItem from="1583785018971" duration="272000" />
+      <workItem from="1636440472368" duration="8634000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="218" y="126" width="1443" height="755" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583790078850">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state x="218" y="126" width="1443" height="755" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/-1680.23.1680.1027@0.23.1920.1057" timestamp="1583790078850" />
-    <state x="235" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1583784198934">
-      <screen x="0" y="23" width="1680" height="1027" />
-    </state>
-    <state x="235" y="210" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1583784198934" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="masterDetails">
     <states>
