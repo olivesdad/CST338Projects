@@ -21,7 +21,7 @@ public class Markov {
     prevWord=PUNCTUATION;
     }
 
-    public HashMap getWords(){ //What is this for?
+    public HashMap<String, ArrayList<String>> getWords(){ //What is this for?
         return words;
     }
 
@@ -76,7 +76,6 @@ public class Markov {
         String nextWord;
         int wc = words.get(word).size();
         nextWord = words.get(word).get((int) Math.floor(Math.random() * (wc)));
-       // System.out.println((int) Math.floor(Math.random()) * (wc+1));
         return nextWord;
     }
 
@@ -92,7 +91,7 @@ public class Markov {
         //loop will continue until we hit punctuation word.
         while (!end) {
             if (!endsWithPunctuation(word)) {
-                s.append(word + " ");
+                s.append(word).append(" ");
                 word = randomWord(word);
             } else {
                 s.append(word);
