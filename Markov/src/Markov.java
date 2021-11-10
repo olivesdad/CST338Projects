@@ -78,7 +78,7 @@ public class Markov {
     }
 
     public String getSentence(){
-        String s = "";
+        StringBuilder s = new StringBuilder();
         String word;
         boolean end = false;
        // pick random word from punctuation list
@@ -89,15 +89,15 @@ public class Markov {
         //loop will continue until we hit punctuation word.
         while (!end) {
             if (!endsWithPunctuation(word)) {
-                s = s + word + " ";
+                s.append(word + " ");
                 word = randomWord(word);
             } else {
-                s = s + word;
+                s.append(word);
                 end = true;
             }
         }
         prevWord = PUNCTUATION;
-    return s;
+    return s.toString();
     }
 
     @Override
