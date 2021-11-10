@@ -34,9 +34,12 @@ public class Markov {
             e.printStackTrace();
             System.out.print("File not found");
         }
-        while(scanner.hasNext()){
-            addLine(scanner.nextLine());
-        }
+            while (true) {
+                assert scanner != null;
+                if (!scanner.hasNext()) break;
+                addLine(scanner.nextLine());
+            }
+
     }
     public void addLine(String line){ //checks that the string isnt empty then passes each word to add word
         line = line.trim();
