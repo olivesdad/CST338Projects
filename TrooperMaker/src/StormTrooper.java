@@ -1,3 +1,8 @@
+/*
+ * Andrew Shiraki
+ * 2021 - 11 - 09
+ * StoreTrooper is an extension of Trooper class
+ */
 public class StormTrooper extends Trooper{
     private String name;
     private static int soldierCount=0;

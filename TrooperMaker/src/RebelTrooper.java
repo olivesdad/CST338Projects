@@ -1,3 +1,30 @@
+/*
+ *                __
+    .-.__      \ .-.  ___  __|_|
+'--.-.-(   \/\;;\_\.-._______.-.
+    (-)___     \ \ .-\ \;;\(   \       \ \
+     Y    '---._\_((Q)) \;;\\ .-\     __(_)
+     I           __'-' / .--.((Q))---'    \,
+     I     ___.-:    \|  |   \'-'_          \
+     A  .-'      \ .-.\   \   \ \ '--.__     '\
+     |  |____.----((Q))\   \__|--\_      \     '
+        ( )        '-'  \_  :  \-' '--.___\
+         Y                \  \  \       \(_)
+         I                 \  \  \         \,
+         I                  \  \  \          \
+         A                   \  \  \          '\
+         |              snd   \  \__|           '
+                               \_:.  \
+                                 \ \  \
+                                  \ \  \
+                                   \_\_|
+
+ *
+ *
+ * Andrew Shiraki
+ * 2021 - 11 - 09
+ * RebelTrooper.java extends the Trooper class and can be instantiated in AStarWar! >o<
+ */
 public class RebelTrooper extends Trooper{
     private String name;
     private static int soldierCount=0;
