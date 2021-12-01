@@ -1,4 +1,4 @@
-package com.example.keebuilder;
+package cst338.keebuilder;
 
 import org.junit.Test;
 
