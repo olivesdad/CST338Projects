@@ -11,22 +11,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import cst338.keebuilder.db.AppDatabase;
 import cst338.keebuilder.db.KeebDao;
 
 public class MainActivity extends AppCompatActivity {
     Button login;
-    KeebDao keebdao;
     Button create_account;
     EditText user_name_text_input;
     EditText password_text_input;
-    KeebDao keebDao;
+    KeebDao kd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        keebDao = DBtools.getKeebDao(getApplicationContext());
+        kd = DBtools.getKeebDao(getApplicationContext());
         wireUp();
 
     }
@@ -44,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         login = findViewById(R.id.login_login_button);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login(user_name_text_input.getText().toString(), password_text_input.getText().toString());
+            }
+        });
         //Action bar
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
@@ -51,7 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void login(String name, String pw){
-
+        User newLogin = kd.getUserByName(name);
+        if (newLogin == null || !newLogin.getMUserPassword().toString().equals(pw)){
+            Toast.makeText(this, "Bad Username or Password", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = TopLevelMenu.getTopLevelMenuIntent(getApplicationContext(), newLogin.getMUserId());
+            startActivity(intent);
+        }
     }
     public static Intent getMainIntent(Context context){
         return new Intent(context, MainActivity.class);
