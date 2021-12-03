@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         keebDao = DBtools.getKeebDao(getApplicationContext());
+        wireUp();
+
+    }
+
+    private void wireUp(){
         //buttons
         user_name_text_input = findViewById(R.id.user_name_input);
         password_text_input = findViewById(R.id.password_input);
@@ -44,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
         assert actionBar != null;
         actionBar.setTitle("Account Login");
 
+    }
+    private void login(String name, String pw){
 
     }
-
+    public static Intent getMainIntent(Context context){
+        return new Intent(context, MainActivity.class);
+    }
 }

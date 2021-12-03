@@ -10,6 +10,7 @@ import cst338.keebuilder.db.AppDatabase;
 import cst338.keebuilder.db.KeebDao;
 
 public class DBtools {
+    public static final String USER_ID = "userId";
     public static KeebDao getKeebDao(final Context context){
         //get Dao
         KeebDao temp = Room.databaseBuilder(context, AppDatabase.class, "KeebDB")
