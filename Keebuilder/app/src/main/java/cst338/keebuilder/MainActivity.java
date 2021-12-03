@@ -2,6 +2,7 @@ package cst338.keebuilder;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,15 +11,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import cst338.keebuilder.db.AppDatabase;
+import cst338.keebuilder.db.KeebDao;
+
 public class MainActivity extends AppCompatActivity {
     Button login;
+    KeebDao keebdao;
     Button create_account;
     EditText user_name_text_input;
     EditText password_text_input;
+    KeebDao keebDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        keebDao = DBtools.getKeebDao(getApplicationContext());
         //buttons
         user_name_text_input = findViewById(R.id.user_name_input);
         password_text_input = findViewById(R.id.password_input);
@@ -38,4 +46,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }
