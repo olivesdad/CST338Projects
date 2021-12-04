@@ -5,4 +5,5 @@
     <string name="user_name_hint">User Name</string>
     <string name="password">Password</string>
     <string name="logout_button_text">logout</string>
+    <string name="registered_users">Registered Users</string>
 </resources>
