@@ -12,7 +12,7 @@
         <activity
             android:name=".AdminPage"
             android:exported="false"
-            android:parentActivityName=".TopLevelMenu"/>
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".TopLevelMenu"
             android:exported="false" />
