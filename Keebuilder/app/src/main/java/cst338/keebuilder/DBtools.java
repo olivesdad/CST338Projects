@@ -1,6 +1,8 @@
 package cst338.keebuilder;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 
 import androidx.room.Room;
 
@@ -25,5 +27,16 @@ public class DBtools {
             temp.insert(defaultAndy);
         }
         return temp;
+    }
+    public static User getActiveUser(Context context){
+        KeebDao kd = getKeebDao(context);
+        SharedPreferences sharedPref = context.getSharedPreferences(DBtools.SP, Context.MODE_PRIVATE);
+        int userId = sharedPref.getInt(DBtools.USER_ID, -1);
+        if(userId != -1){
+            Intent intent = TopLevelMenu.getTopLevelMenuIntent(context.getApplicationContext(), userId);
+            return kd.getUserById(userId);
+        }else{
+            return null;
+        }
     }
 }

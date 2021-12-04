@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         if (newLogin == null || !newLogin.getMUserPassword().toString().equals(pw)){ //if user doesnt exist or password doesnt match
             Toast.makeText(this, "Bad Username or Password", Toast.LENGTH_SHORT).show(); //Toasty!
         } else { //if user login successful start toplevel intent with userID
+            setPref(newLogin.getMUserId());
             Intent intent = TopLevelMenu.getTopLevelMenuIntent(getApplicationContext(), newLogin.getMUserId());
             startActivity(intent);
         }
@@ -79,5 +80,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public static Intent getMainIntent(Context context){ //intent factory
         return new Intent(context, MainActivity.class);
+    }
+    private void setPref(int userId){
+        SharedPreferences sharedPref = getSharedPreferences(DBtools.SP, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(DBtools.USER_ID, userId);
+        editor.apply();
     }
 }

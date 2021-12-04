@@ -25,8 +25,9 @@ public class TopLevelMenu extends AppCompatActivity {
         setContentView(R.layout.activity_top_level_menu);
         //get dao
         kd = DBtools.getKeebDao(getApplicationContext());
-        //get current user which was passed with intent
-        user = kd.getUserById(getIntent().getIntExtra(DBtools.USER_ID, -1));
+        //set shared pref with the user id
+        setPref(getIntent().getIntExtra(DBtools.USER_ID,-1));
+        user = DBtools.getActiveUser(this);
         //wire up display stuff
         wireUp();
 
@@ -41,7 +42,6 @@ public class TopLevelMenu extends AppCompatActivity {
 
         //set top bar thing
         if(user != null){
-            setPref(user.getMUserId()); //store the userId in shared preferences
             StringBuilder title = new StringBuilder(); //builder for top bar
             title.append(user.getMUserName().toString()); //starts with user name
             if (user.isMIsAdmin()){
