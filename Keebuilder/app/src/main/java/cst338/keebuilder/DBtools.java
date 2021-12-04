@@ -11,6 +11,7 @@ import cst338.keebuilder.db.KeebDao;
 
 public class DBtools {
     public static final String USER_ID = "userId";
+    public static final String SP = "keeb_builder_preferences";
     public static KeebDao getKeebDao(final Context context){
         //get Dao
         KeebDao temp = Room.databaseBuilder(context, AppDatabase.class, "KeebDB")
