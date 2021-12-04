@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Keebuilder">
         <activity
+            android:name=".AdminPage"
+            android:exported="false"
+            android:parentActivityName=".TopLevelMenu"/>
+        <activity
             android:name=".TopLevelMenu"
             android:exported="false" />
         <activity

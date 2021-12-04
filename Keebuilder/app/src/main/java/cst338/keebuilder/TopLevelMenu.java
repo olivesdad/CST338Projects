@@ -15,6 +15,7 @@ import cst338.keebuilder.db.KeebDao;
 
 public class TopLevelMenu extends AppCompatActivity {
     Button logout;
+    Button admin_button;
     ActionBar actionBar;
     User user=null;
     KeebDao kd;
@@ -34,7 +35,10 @@ public class TopLevelMenu extends AppCompatActivity {
     private void wireUp() {
         //buttons and stuff
         logout = findViewById(R.id.topLevelMenuLogout);
+        admin_button = findViewById(R.id.Top_level_admin_button);
+        admin_button.setVisibility(View.GONE);
         actionBar = getSupportActionBar();
+
         //set top bar thing
         if(user != null){
             setPref(user.getMUserId()); //store the userId in shared preferences
@@ -42,6 +46,13 @@ public class TopLevelMenu extends AppCompatActivity {
             title.append(user.getMUserName().toString()); //starts with user name
             if (user.isMIsAdmin()){
                 title.append(" (Admin)"); //if the user is admin add to name
+                admin_button.setVisibility(View.VISIBLE);
+                admin_button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    startActivity(AdminPage.getTntent(getApplicationContext(), user.getMUserId()));
+                    }
+                });
             }
             actionBar.setTitle(title);
         }else{
