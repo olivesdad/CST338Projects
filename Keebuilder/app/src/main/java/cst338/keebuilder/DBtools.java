@@ -23,8 +23,10 @@ public class DBtools {
         //check for users exist if not add default
         List<User> users = temp.getAllUsers();
         if (users.size() <=0){
-            User defaultAndy = new User("andy", "password", true);
-            temp.insert(defaultAndy);
+            User defaultAdmin = new User("admin2", "admin2", true);
+            temp.insert(defaultAdmin);
+            User defaultUser = new User("testuser1", "testuser1", false);
+            temp.insert(defaultUser);
         }
         return temp;
     }
@@ -50,7 +52,7 @@ public class DBtools {
             return true;
         }
     }
-    //take a string name and KeebDao. Tries to 
+    //take a string name and KeebDao. Tries to
     public static boolean changeAdminStatus(String name, KeebDao kd){
         User user = kd.getUserByName(name);
         if (user == null) return false;
