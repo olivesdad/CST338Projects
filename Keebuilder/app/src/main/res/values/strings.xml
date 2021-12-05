@@ -7,4 +7,7 @@
     <string name="logout_button_text">logout</string>
     <string name="registered_users">Registered Users</string>
     <string name="manage_users">Manage users</string>
+    <string name="delete_user">Delete User</string>
+    <string name="username_to_be_deleted">User to be modified</string>
+    <string name="promote_to_admin">Toggle admin</string>
 </resources>

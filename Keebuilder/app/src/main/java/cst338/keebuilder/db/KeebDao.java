@@ -1,5 +1,14 @@
 package cst338.keebuilder.db;
-
+/*
+ * ______ __         ______ ______________________
+ * ___  //_/____________  /____  __ \__    |_  __ \
+ * __  ,<  _  _ \  _ \_  __ \_  / / /_  /| |  / / /
+ * _  /| | /  __/  __/  /_/ /  /_/ /_  ___ / /_/ /
+ * /_/ |_| \___/\___//_.___//_____/ /_/  |_\____/
+ * Andrew Shiraki
+ * 2021-12-5
+ * This is the KeebDao class it is the DAO for our app database. It defines standard database management methods and Queries
+ */
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;

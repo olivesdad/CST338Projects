@@ -28,6 +28,7 @@ public class DBtools {
         }
         return temp;
     }
+    //use this to return the activeuser based on the userId in shared pref insance
     public static User getActiveUser(Context context){
         KeebDao kd = getKeebDao(context);
         SharedPreferences sharedPref = context.getSharedPreferences(DBtools.SP, Context.MODE_PRIVATE);
@@ -37,6 +38,30 @@ public class DBtools {
             return kd.getUserById(userId);
         }else{
             return null;
+        }
+    }
+    public static boolean deleteUserByUserName(String name, KeebDao kd){
+        User user = null;
+        user = kd.getUserByName(name);
+        if (user == null) return false;
+        else if (user.getMUserId() == 1) return false;
+        else{
+            kd.delete(user);
+            return true;
+        }
+    }
+    //take a string name and KeebDao. Tries to 
+    public static boolean changeAdminStatus(String name, KeebDao kd){
+        User user = kd.getUserByName(name);
+        if (user == null) return false;
+        else if (user.isMIsAdmin()){
+            user.setMIsAdmin(false);
+            kd.update(user);
+            return false;
+        }else{
+            user.setMIsAdmin(true);
+            kd.update(user);
+            return true;
         }
     }
 }

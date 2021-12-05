@@ -1,4 +1,14 @@
 package cst338.keebuilder;
+/*
+ ____ ____ ____ ____
+||U |||S |||E |||R ||
+||__|||__|||__|||__||
+|/__\|/__\|/__\|/__\|
+ * Andrew Shiraki
+ * 2021-12-5
+ * This is the User class. It is an Entity for our database.
+ * Keys include username, password, and is admin
+ */
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

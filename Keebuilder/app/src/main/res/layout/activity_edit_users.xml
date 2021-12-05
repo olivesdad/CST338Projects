@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0C0C0C"
+    android:backgroundTint="#070707"
     tools:context=".AdminPage">
 
     <TextView
@@ -15,6 +17,7 @@
         android:isScrollContainer="false"
         android:text=""
         android:textAlignment="center"
+        android:textColor="#45B549"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Edit_user_list_label" />
@@ -31,4 +34,45 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Edit_user_delete_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#2F8F0C"
+        android:backgroundTintMode="add"
+        android:text="@string/delete_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_users_delete_user_input_text" />
+
+    <EditText
+        android:id="@+id/edit_users_delete_user_input_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/username_to_be_deleted"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="#F306EC1C"
+        android:textColorHint="#3F6041"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Edit_user_list" />
+
+    <Button
+        android:id="@+id/Promote_user_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#2F8F0C"
+        android:backgroundTintMode="add"
+        android:text="@string/promote_to_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Edit_user_delete_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
