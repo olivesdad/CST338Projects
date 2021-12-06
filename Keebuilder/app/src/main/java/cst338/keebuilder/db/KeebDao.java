@@ -57,6 +57,6 @@ public interface KeebDao {
     @Query("SELECT * FROM " + AppDatabase.STORE_ITEMS + "  WHERE mItemName = :name")
     StoreItem getStoreItemByName(String name);
 
-    @Query("SELECT * FROM " + AppDatabase.STORE_ITEMS + "  WHERE mItemNumber = :number")
+    @Query("SELECT * FROM " + AppDatabase.STORE_ITEMS + "  WHERE mItemNumber = :number" +" ORDER by mPrice")
     StoreItem getStoreItemByNumber(int number);
 }

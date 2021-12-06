@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
@@ -55,6 +57,7 @@ public class Edit_Users extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         promoteUserButton = findViewById(R.id.Promote_user_button);
         ab.setTitle("Manage Users");
+        ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#2F8F0C")));
         userList = findViewById(R.id.Edit_user_list);
         userNameInputText = findViewById(R.id.edit_users_delete_user_input_text);
         userLabel = findViewById(R.id.Edit_user_list_label);

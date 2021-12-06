@@ -71,7 +71,6 @@
         android:backgroundTintMode="add"
         android:text="@string/promote_to_admin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Edit_user_delete_button" />
 

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -17,7 +19,7 @@ import cst338.keebuilder.db.KeebDao;
 
 public class AdminPage extends AppCompatActivity {
     ActionBar actionBar;
-    Button editUsersButton;
+    Button editUsersButton, addItemsButton;
     KeebDao kd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +32,20 @@ public class AdminPage extends AppCompatActivity {
     public void wireup(){
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("Admin Options");
+        actionBar.setTitle("");
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
         editUsersButton = findViewById(R.id.Admin_Manage_Users_Button);
         editUsersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(Edit_Users.getIntent(getApplicationContext()));
+            }
+        });
+        addItemsButton = findViewById(R.id.Admin_Add_Items_Button);
+        addItemsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Add_store_items.getIntent(getApplicationContext()));
             }
         });
     }

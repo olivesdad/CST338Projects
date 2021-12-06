@@ -10,4 +10,12 @@
     <string name="delete_user">Delete User</string>
     <string name="username_to_be_deleted">User to be modified</string>
     <string name="promote_to_admin">Toggle admin</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_description">Item Description</string>
+    <string name="category">Category</string>
+    <string name="price">Price</string>
+    <string name="add_item">Add Item</string>
+    <string name="add_items">add items</string>
+    <string name="wake_up_neo">Wake up Neo...</string>
+    <string name="quantity">Quantity</string>
 </resources>

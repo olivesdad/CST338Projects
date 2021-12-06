@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Keebuilder">
         <activity
+            android:name=".Add_store_items"
+            android:exported="false" />
+        <activity
             android:name=".Edit_Users"
             android:exported="false"
-            android:parentActivityName=".AdminPage"/>
+            android:parentActivityName=".AdminPage" />
         <activity
             android:name=".AdminPage"
             android:exported="false"
@@ -33,6 +36,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
