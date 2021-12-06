@@ -17,6 +17,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
+import cst338.keebuilder.StoreItem;
 import cst338.keebuilder.User;
 
 @Dao
@@ -39,4 +40,23 @@ public interface KeebDao {
 
     @Query("SELECT * FROM " + AppDatabase.USER_TABLE + "  WHERE mUserId = :id")
     User getUserById(int id);
+
+    //<------------------DB stuff for storeItems---------------->
+    @Insert
+    void insert(StoreItem... storeItems);
+
+    @Update
+    void update(StoreItem... storeItems);
+
+    @Delete
+    void delete(StoreItem storeItem);
+
+    @Query("SELECT * FROM " + AppDatabase.STORE_ITEMS)
+    List<StoreItem> getAllStoreItems();
+
+    @Query("SELECT * FROM " + AppDatabase.STORE_ITEMS + "  WHERE mItemName = :name")
+    StoreItem getStoreItemByName(String name);
+
+    @Query("SELECT * FROM " + AppDatabase.STORE_ITEMS + "  WHERE mItemNumber = :number")
+    StoreItem getStoreItemByNumber(int number);
 }
