@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import cst338.keebuilder.db.KeebDao;
 
@@ -30,6 +32,42 @@ public class Add_store_items extends AppCompatActivity {
         qtyInput = findViewById(R.id.Quantity);
         priceInput = findViewById(R.id.Add_item_price);
         addItemButton = findViewById(R.id.Add_items_button);
+        addItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addItems();
+            }
+        });
+    }
+
+    private void addItems(){
+        String name, desc, category;
+        int qty;
+        double price;
+        //get strings
+        name = nameInput.getText().toString();
+        desc = descInput.getText().toString();
+        category = categoryInput.getText().toString();
+        try {
+            qty = Integer.parseInt(qtyInput.getText().toString());
+            price = Double.parseDouble(priceInput.getText().toString());
+        }catch (NumberFormatException e){
+            Toast.makeText(getApplicationContext(), "Invalid Number", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        //see if there is already an entry
+        if(!(kd.getStoreItemByName(name)==null)){
+            Toast.makeText(getApplicationContext(), name + " already exists. Please use update item instead.", Toast.LENGTH_SHORT).show();
+        } else {
+            StoreItem item = new StoreItem(name, desc, category, qty, price);
+            kd.insert(item);
+            Toast.makeText(getApplicationContext(), name + " successfully added to store.", Toast.LENGTH_SHORT).show();
+        }
+        nameInput.setText("");
+        descInput.setText("");
+        categoryInput.setText("");
+        qtyInput.setText("");
+        priceInput.setText("");
     }
     public static Intent getIntent(Context context){
         return new Intent(context, Add_store_items.class);
