@@ -31,19 +31,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Admin_Manage_Users_Button" />
+    <Button
+        android:id="@+id/Admin_Update_Items_Button"
+        android:layout_width="255dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#2F8F0C"
+        android:backgroundTintMode="add"
+        android:text="@string/update_inventory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_Add_Items_Button" />
 
-    <TextView
-        android:id="@+id/knock_knock"
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/vt323"
-        android:text="@string/wake_up_neo"
-        android:textColor="#65DF42"
-        android:textSize="24sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/wakeup" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

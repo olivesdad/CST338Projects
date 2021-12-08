@@ -14,15 +14,25 @@ public class StoreItem {
     private String mItemName;
     private String mDescription;
     private String mCategory;
+    private String mDisplayName;
     private int mQty;
     private double mPrice;
 
-    public StoreItem(String mItemName, String mDescription, String mCategory, int mQty, double mPrice) {
+    public StoreItem(String mItemName, String mDisplayName, String mDescription, String mCategory, int mQty, double mPrice) {
         this.mDescription = mDescription;
+        this.mDisplayName = mDisplayName;
         this.mItemName = mItemName;
         this.mCategory = mCategory;
         this.mQty = mQty;
         this.mPrice = mPrice;
+    }
+
+    public String getMDisplayName() {
+        return mDisplayName;
+    }
+
+    public void setMDisplayName(String mDisplayName) {
+        this.mDisplayName = mDisplayName;
     }
 
     public int getMItemNumber() {

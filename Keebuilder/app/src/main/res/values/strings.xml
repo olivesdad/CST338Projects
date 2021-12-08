@@ -18,4 +18,7 @@
     <string name="add_items">add items</string>
     <string name="wake_up_neo">Wake up Neo...</string>
     <string name="quantity">Quantity</string>
+    <string name="inventory">Inventory</string>
+    <string name="update_inventory">Update inventory</string>
+    <string name="update_item">Update Item</string>
 </resources>

@@ -19,7 +19,7 @@ import cst338.keebuilder.db.KeebDao;
 
 public class AdminPage extends AppCompatActivity {
     ActionBar actionBar;
-    Button editUsersButton, addItemsButton;
+    Button editUsersButton, addItemsButton, updateInventory;
     KeebDao kd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,13 @@ public class AdminPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(Add_store_items.getIntent(getApplicationContext()));
+            }
+        });
+        updateInventory = findViewById(R.id.Admin_Update_Items_Button);
+        updateInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Update_Inventory.getIntent(getApplicationContext()));
             }
         });
     }

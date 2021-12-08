@@ -10,8 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Keebuilder">
         <activity
+            android:name=".Update_Inventory"
+            android:exported="false"
+            android:parentActivityName=".AdminPage"/>
+        <activity
             android:name=".Add_store_items"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AdminPage" />
         <activity
             android:name=".Edit_Users"
             android:exported="false"

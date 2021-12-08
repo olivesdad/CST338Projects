@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:backgroundTint="#000000"
+    tools:context=".Add_store_items">
+
+    <EditText
+        android:id="@+id/Update_items_item_name_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/item_name"
+        android:inputType="text"
+        android:text=""
+        android:textColor="#F306EC1C"
+        android:textColorHint="#3F6041"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Update_inventory_list" />
+
+    <EditText
+        android:id="@+id/Update_items_description_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="@string/item_description"
+        android:inputType="text"
+        android:text=""
+        android:textColor="#F306EC1C"
+        android:textColorHint="#3F6041"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Update_items_item_name_input" />
+
+    <EditText
+        android:id="@+id/Update_item_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="@string/category"
+        android:inputType="text"
+        android:text=""
+        android:textColor="#F306EC1C"
+        android:textColorHint="#3F6041"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Update_items_description_input" />
+
+    <EditText
+        android:id="@+id/Update_Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="@string/quantity"
+        android:inputType="number"
+        android:text=""
+        android:textColor="#F306EC1C"
+        android:textColorHint="#3F6041"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Update_item_category" />
+
+    <EditText
+        android:id="@+id/Update_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="@string/price"
+        android:inputType="text|numberDecimal"
+        android:text=""
+        android:textColor="#F306EC1C"
+        android:textColorHint="#3F6041"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Update_Quantity" />
+
+    <Button
+        android:id="@+id/Update_items_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#2F8F0C"
+        android:backgroundTintMode="add"
+        android:text="@string/update_item"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Update_item_price" />
+
+    <TextView
+        android:id="@+id/Update_items_list_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="@string/inventory"
+        android:textColor="#4CAF50"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/Update_inventory_list"
+        android:layout_width="371dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:fadeScrollbars="true"
+        android:isScrollContainer="false"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#45B549"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
