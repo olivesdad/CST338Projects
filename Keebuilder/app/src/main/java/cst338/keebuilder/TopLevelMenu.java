@@ -26,7 +26,7 @@ public class TopLevelMenu extends AppCompatActivity {
         //get dao
         kd = DBtools.getKeebDao(getApplicationContext());
         //set shared pref with the user id
-        setPref(getIntent().getIntExtra(DBtools.USER_ID,-1));
+     //   setPref(getIntent().getIntExtra(DBtools.USER_ID,-1));
         user = DBtools.getActiveUser(this);
         //wire up display stuff
         wireUp();

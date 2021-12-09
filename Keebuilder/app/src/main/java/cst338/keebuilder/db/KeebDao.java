@@ -77,4 +77,7 @@ public interface KeebDao {
 
     @Query("SELECT * FROM " + AppDatabase.CART_ITEMS + "  WHERE cUser = :name")
     List<CartItem> getCartItemsByUserName(String name);
+
+    @Query("SELECT * FROM " + AppDatabase.CART_ITEMS + "  WHERE cItemName = :name")
+    CartItem getCartItemByName(String name);
 }

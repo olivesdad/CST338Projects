@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         } else { //if user login successful start toplevel intent with userID
             setPref(newLogin.getMUserId());
             Intent intent = TopLevelMenu.getTopLevelMenuIntent(getApplicationContext(), newLogin.getMUserId());
+            setPref(newLogin.getMUserId());
             startActivity(intent);
         }
     }
