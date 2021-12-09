@@ -6,6 +6,8 @@ import androidx.room.Update;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -45,6 +47,8 @@ public class Update_Inventory extends AppCompatActivity {
         inventory.setMovementMethod(new ScrollingMovementMethod());
         ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("");
+        ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
         priceInput = findViewById(R.id.Update_item_price);
         UpdateItemButton = findViewById(R.id.Update_items_button);
         UpdateItemButton.setOnClickListener(new View.OnClickListener() {

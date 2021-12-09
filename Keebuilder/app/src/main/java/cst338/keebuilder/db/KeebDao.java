@@ -17,6 +17,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
+import cst338.keebuilder.CartItem;
 import cst338.keebuilder.StoreItem;
 import cst338.keebuilder.User;
 
@@ -59,4 +60,21 @@ public interface KeebDao {
 
     @Query("SELECT * FROM " + AppDatabase.STORE_ITEMS + "  WHERE mItemNumber = :number" +" ORDER by mPrice")
     StoreItem getStoreItemByNumber(int number);
+
+    //-----------DB stuff for cart items----------------
+
+    @Insert
+    void insert(CartItem... cartItems);
+
+    @Update
+    void update(CartItem... cartItems);
+
+    @Delete
+    void delete(CartItem cartItem);
+
+    @Query("SELECT * FROM " + AppDatabase.CART_ITEMS)
+    List<CartItem> getAllCartItems();
+
+    @Query("SELECT * FROM " + AppDatabase.CART_ITEMS + "  WHERE cUser = :name")
+    List<CartItem> getCartItemsByUserName(String name);
 }

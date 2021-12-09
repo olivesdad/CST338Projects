@@ -21,4 +21,7 @@
     <string name="inventory">Inventory</string>
     <string name="update_inventory">Update inventory</string>
     <string name="update_item">Update Item</string>
+    <string name="in_stock_items">In Stock Items</string>
+    <string name="item_to_add">Item to add</string>
+    <string name="add_to_cart">Add to cart</string>
 </resources>

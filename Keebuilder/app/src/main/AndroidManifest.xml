@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Keebuilder">
         <activity
+            android:name=".Shopping"
+            android:exported="false"
+            android:parentActivityName=".TopLevelMenu"/>
+        <activity
             android:name=".Update_Inventory"
             android:exported="false"
-            android:parentActivityName=".AdminPage"/>
+            android:parentActivityName=".AdminPage" />
         <activity
             android:name=".Add_store_items"
             android:exported="false"

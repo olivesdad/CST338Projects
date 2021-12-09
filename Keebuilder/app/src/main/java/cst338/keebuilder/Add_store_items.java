@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +38,8 @@ public class Add_store_items extends AppCompatActivity {
         qtyInput = findViewById(R.id.Quantity);
         ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("");
+        ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
         priceInput = findViewById(R.id.Add_item_price);
         addItemButton = findViewById(R.id.Add_items_button);
         addItemButton.setOnClickListener(new View.OnClickListener() {

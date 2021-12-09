@@ -14,7 +14,7 @@ import cst338.keebuilder.db.AppDatabase;
 import cst338.keebuilder.db.KeebDao;
 
 public class TopLevelMenu extends AppCompatActivity {
-    Button logout;
+    Button logout, goToShop;
     Button admin_button;
     ActionBar actionBar;
     User user=null;
@@ -36,6 +36,7 @@ public class TopLevelMenu extends AppCompatActivity {
     private void wireUp() {
         //buttons and stuff
         logout = findViewById(R.id.topLevelMenuLogout);
+        goToShop = findViewById(R.id.topLevelMenuGoShoppingButton);
         admin_button = findViewById(R.id.Top_level_admin_button);
         admin_button.setVisibility(View.GONE);
         actionBar = getSupportActionBar();
@@ -64,6 +65,12 @@ public class TopLevelMenu extends AppCompatActivity {
             public void onClick(View v) {
                 setPref(-1); // set the shared preference user id back to -1
                 startActivity(MainActivity.getMainIntent(getApplicationContext())); //go back to Main
+            }
+        });
+        goToShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Shopping.getIntent(getApplicationContext()));
             }
         });
     }
