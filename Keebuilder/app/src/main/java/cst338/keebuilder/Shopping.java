@@ -72,7 +72,8 @@ public class Shopping extends AppCompatActivity {
     }
 
     private void addToCart(){
-        String itemName = itemInput.getText().toString().toLowerCase();
+        String itemDisplayname = itemInput.getText().toString().trim();
+        String itemName = itemDisplayname.toLowerCase();
         String me = user.getMUserName();
         int qty = 0;
         try {
@@ -82,7 +83,7 @@ public class Shopping extends AppCompatActivity {
             return;
         }
         StoreItem item = kd.getStoreItemByName(itemName);
-        if (!(item == null)){
+        if (item != null){
             //check the qty is ok
             if (qty > 0 && qty < item.getMQty()){
                 //deduct the qty from item

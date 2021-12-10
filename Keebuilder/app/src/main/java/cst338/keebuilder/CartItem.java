@@ -11,19 +11,28 @@ public class CartItem {
     private int cItemId;
 
     private String cItemName;
-
+    private String cDisplayItemname;
     private String cCategory;
     private String cUser;
     private int cQty;
     private double cPrice;
 
     //CONSTRUCTOR
-    public CartItem(String cItemName, String cCategory, String cUser, int cQty, double cPrice){
-        this.cItemName = cItemName;
+    public CartItem(String cDisplayItemname, String cCategory, String cUser, int cQty, double cPrice){
+        this.cItemName = cDisplayItemname.toLowerCase();
+        this.cDisplayItemname = cDisplayItemname;
         this.cCategory=cCategory;
         this.cUser = cUser;
         this.cQty = cQty;
         this.cPrice = cPrice;
+    }
+
+    public String getCDisplayItemname() {
+        return cDisplayItemname;
+    }
+
+    public void setCDisplayItemname(String cDisplayItemname) {
+        this.cDisplayItemname = cDisplayItemname;
     }
 
     public int getCItemId() {
