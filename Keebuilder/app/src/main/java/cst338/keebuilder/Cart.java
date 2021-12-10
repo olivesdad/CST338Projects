@@ -101,13 +101,32 @@ public class Cart extends AppCompatActivity {
             return false;
         }
         if (itemQty<=0) {
+            //delete item from cart db
             kd.delete(updateItem);
+            //add stock back to store
+            StoreItem temp = kd.getStoreItemByName(updateItem.getCItemName());
+            if (temp == null ){
+                Toast.makeText(getApplicationContext(), "Something very bad has happened please burn this app", Toast.LENGTH_SHORT).show();
+            } else {
+                temp.setMQty(temp.getMQty() + updateItem.getCQty());
+                kd.update(temp);
+            }
             Toast.makeText(getApplicationContext(), updateItem.getCDisplayItemname() + " removed from cart", Toast.LENGTH_SHORT).show();
         }
         else {
-            updateItem.setCQty(itemQty);
-            kd.update(updateItem);
-            Toast.makeText(getApplicationContext(), updateItem.getCDisplayItemname() + ": update quantity", Toast.LENGTH_SHORT).show();
+            int delta = updateItem.getCQty() - itemQty; //this is the diff if new value is more we need to deduct from store
+            //must check we have stock
+            StoreItem temp = kd.getStoreItemByName(updateItem.getCItemName());
+            if (temp.getMQty() + delta < 0 ){ //if temp goes negative we dont have enough stock
+                Toast.makeText(getApplicationContext(), "Not enough stock to fulfill request", Toast.LENGTH_SHORT).show();
+                return false;
+            }else {
+                temp.setMQty(temp.getMQty() + delta); //add the delta to temp
+                updateItem.setCQty(itemQty);
+                kd.update(updateItem);
+                kd.update(temp);
+                Toast.makeText(getApplicationContext(), updateItem.getCDisplayItemname() + ": update quantity", Toast.LENGTH_SHORT).show();
+            }
         }
         return true;
     }
