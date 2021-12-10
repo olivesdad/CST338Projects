@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/activity_add_store_items.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_admin_page.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.153125" />
         <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.346875" />
         <entry key="app/src/main/res/layout/activity_edit_users.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />

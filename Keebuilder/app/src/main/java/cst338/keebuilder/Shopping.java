@@ -46,6 +46,12 @@ public class Shopping extends AppCompatActivity {
             }
         });
         goToCart = findViewById(R.id.Shopping_go_to_cart_button);
+        goToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Cart.getIntent(getApplicationContext()));
+            }
+        });
         itemInput = findViewById(R.id.Shopping_Item_input_text);
         itemQty = findViewById(R.id.Shopping_Item_qty_input_text);
         inventory = findViewById(R.id.Instock_list);
