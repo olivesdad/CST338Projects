@@ -69,8 +69,7 @@ public class Cart extends AppCompatActivity {
         for (CartItem item : cartItems){
             price = item.getCPrice();
             qty = item.getCQty();
-            sb.append( counter++ + ") " +
-                    item.getCDisplayItemname() + "\n"
+            sb.append( String.format("%-32s",counter++ + ") " + item.getCDisplayItemname()) + "\n"
                     + String.format("%-4.2f", price)
                     + " x " + String.format("%-4.2f", qty)
                     + " = " + String.format("%5.2f",price * qty) + "\n\n"
@@ -106,7 +105,7 @@ public class Cart extends AppCompatActivity {
             //add stock back to store
             StoreItem temp = kd.getStoreItemByName(updateItem.getCItemName());
             if (temp == null ){
-                Toast.makeText(getApplicationContext(), "Something very bad has happened please burn this app", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Something very bad has happened, please nuke this app", Toast.LENGTH_SHORT).show();
             } else {
                 temp.setMQty(temp.getMQty() + updateItem.getCQty());
                 kd.update(temp);

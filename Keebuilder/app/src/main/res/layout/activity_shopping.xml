@@ -11,10 +11,12 @@
         android:layout_width="371dp"
         android:layout_height="229dp"
         android:layout_marginTop="16dp"
+        android:background="#440F55"
         android:fadeScrollbars="true"
         android:isScrollContainer="false"
         android:text="test"
         android:textAlignment="center"
+        android:textColor="#30C58E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Shopping_inventory_label" />
@@ -45,10 +47,11 @@
         android:id="@+id/Shopping_Item_input_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
+
         android:hint="@string/item_to_add"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +79,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Shopping_add_to_cart_button" />
 
+    <Spinner
+        android:id="@+id/Catagory_Filter_Spinner"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/Shopping_Item_input_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Instock_list" />
+
+    <TextView
+        android:id="@+id/Categories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/categoriesLabel"
+        app:layout_constraintBottom_toTopOf="@+id/Shopping_Item_input_text"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Instock_list"
+ />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
