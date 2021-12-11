@@ -23,19 +23,43 @@
         android:layout_height="wrap_content"
         android:text="Go to store"
         android:textSize="30sp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topLevelMenuLogout" />
+
+    <Button
+        android:id="@+id/topLevelGoToCart"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:text="Go to Cart"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLevelMenuGoShoppingButton" />
     <Button
         android:id="@+id/Top_level_admin_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Admin"
+        android:text="@string/admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/CowBox"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="monospace"
+        android:text=""
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/topLevelMenuLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.715" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

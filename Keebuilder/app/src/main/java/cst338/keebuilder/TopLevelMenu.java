@@ -9,20 +9,26 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import cst338.keebuilder.db.AppDatabase;
 import cst338.keebuilder.db.KeebDao;
 
 public class TopLevelMenu extends AppCompatActivity {
     Button logout, goToShop;
-    Button admin_button;
+    Button admin_button, goToCart;
     ActionBar actionBar;
     User user=null;
     KeebDao kd;
+    TextView cowBox;
+    StringBuilder giveMeMoney;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_level_menu);
+        cowBox = findViewById(R.id.CowBox);
+        giveMeMoney = new StringBuilder();
+
         //get dao
         kd = DBtools.getKeebDao(getApplicationContext());
         //set shared pref with the user id
@@ -40,7 +46,9 @@ public class TopLevelMenu extends AppCompatActivity {
         admin_button = findViewById(R.id.Top_level_admin_button);
         admin_button.setVisibility(View.GONE);
         actionBar = getSupportActionBar();
-
+        goToCart = findViewById(R.id.topLevelGoToCart);
+        makeCowSay();
+        cowBox.setText(giveMeMoney.toString());
         //set top bar thing
         if(user != null){
             StringBuilder title = new StringBuilder(); //builder for top bar
@@ -73,6 +81,12 @@ public class TopLevelMenu extends AppCompatActivity {
                 startActivity(Shopping.getIntent(getApplicationContext()));
             }
         });
+        goToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Cart.getIntent(getApplicationContext()));
+            }
+        });
     }
 
     //use this to store userId of logged in user within sharepreference
@@ -87,5 +101,15 @@ public class TopLevelMenu extends AppCompatActivity {
         Intent intent = new Intent(context, TopLevelMenu.class);
         intent.putExtra(DBtools.USER_ID, userId);
         return intent;
+    }
+    private void makeCowSay(){
+        giveMeMoney.append(" ______________________ \n" +
+                           "< Please give me money >\n" +
+                           " ---------------------- \n" +
+                           "        \\   ^__^\n" +
+                           "         \\  (oo)\\_______\n" +
+                           "            (__)\\       )\\/\\\n" +
+                           "                ||----w |\n" +
+                           "                ||     ||\n");
     }
 }

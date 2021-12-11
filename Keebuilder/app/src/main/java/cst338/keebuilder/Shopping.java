@@ -165,7 +165,7 @@ public class Shopping extends AppCompatActivity {
                 }
                 //return item back to db
                 kd.update(item);
-                refreshDisplay("ALL");
+                refreshDisplay(dd.getSelectedItem().toString());
                 Toast.makeText(getApplicationContext(), item.getMDisplayName() + " added to cart", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(getApplicationContext(), "Unable to fulfill request", Toast.LENGTH_SHORT).show();

@@ -28,4 +28,14 @@
     <string name="item">Item #</string>
     <string name="update_quantity">Update quantity</string>
     <string name="categoriesLabel">Filter Categories:</string>
+    <string name="givememoney"> ______________________n
+| Please give me money |
+ ----------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</string>
+    <string name="admin">Admin</string>
 </resources>

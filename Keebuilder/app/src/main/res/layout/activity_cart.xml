@@ -13,8 +13,8 @@
         android:layout_marginTop="16dp"
         android:fadeScrollbars="true"
         android:isScrollContainer="false"
+        android:textAlignment="textStart"
         android:textColorHint="@color/black"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Cart_label" />

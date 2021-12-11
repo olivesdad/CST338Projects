@@ -69,7 +69,7 @@ public class Cart extends AppCompatActivity {
         for (CartItem item : cartItems){
             price = item.getCPrice();
             qty = item.getCQty();
-            sb.append( String.format("%-32s",counter++ + ") " + item.getCDisplayItemname()) + "\n"
+            sb.append( String.format("%-20.20s",counter++ + ") " + item.getCDisplayItemname()) + "\n"
                     + String.format("%-4.2f", price)
                     + " x " + String.format("%-4.2f", qty)
                     + " = " + String.format("%5.2f",price * qty) + "\n\n"
