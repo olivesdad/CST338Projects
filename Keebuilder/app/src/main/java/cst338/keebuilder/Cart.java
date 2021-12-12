@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +22,7 @@ public class Cart extends AppCompatActivity {
 
     TextView CartBanner, cartContents;
     EditText updateNum, newQty;
-    Button updateQty;
+    Button updateQty, backToStoreButton, buyItButton;
     ActionBar ab;
     User user;
     KeebDao kd;
@@ -40,8 +41,26 @@ public class Cart extends AppCompatActivity {
     }
 
     private void wireUp(){
+        buyItButton = findViewById(R.id.BUYIT);
+        buyItButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //delete all the cart items
+                dumpCart();
+                //go to the fun page
+                startActivity(Tyvm.getIntent(getApplicationContext()));
+            }
+        });
+        backToStoreButton = findViewById(R.id.Cart_back_to_store);
+        backToStoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Shopping.getIntent(getApplicationContext()));
+            }
+        });
         CartBanner = findViewById(R.id.Cart_label);
         cartContents= findViewById(R.id.Cart_list);
+        cartContents.setMovementMethod(new ScrollingMovementMethod());
         updateNum = findViewById(R.id.Cart_update_item_Number);
         newQty = findViewById(R.id.Cart_update_qty_input);
         ab = getSupportActionBar();
@@ -129,6 +148,12 @@ public class Cart extends AppCompatActivity {
             }
         }
         return true;//a change was made return true
+    }
+    private void dumpCart(){ //erase all items belonging to the user from the db
+        cartItems = kd.getCartItemsByUserName(user.getMUserName());
+        for (CartItem item : cartItems){
+            kd.delete(item);
+        }
     }
     public static Intent getIntent(Context c){
         return new Intent(c, Cart.class);

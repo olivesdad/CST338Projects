@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8DA09E1"
+    android:backgroundTint="#040404"
+    android:backgroundTintMode="add"
+    tools:context=".Tyvm">
+
+    <TextView
+        android:id="@+id/tankyou"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="#0D0463"
+        android:backgroundTint="#00000000"
+        android:backgroundTintMode="add"
+        android:fontFamily="monospace"
+        android:text="Test"
+        android:textColor="#55E1B4"
+        android:textColorHighlight="#06EDED"
+        android:textColorLink="#3B0271"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.324" />
+
+    <Button
+        android:id="@+id/Back_home"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="#120067"
+        android:backgroundTintMode="add"
+        android:text="@string/go_home"
+        android:textColor="#00BCD4"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tankyou" />
+</androidx.constraintlayout.widget.ConstraintLayout>

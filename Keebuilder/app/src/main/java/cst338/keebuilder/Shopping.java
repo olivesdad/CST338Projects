@@ -153,7 +153,7 @@ public class Shopping extends AppCompatActivity {
                 //deduct the qty from item
                 item.setMQty(item.getMQty() - qty);
                 //check for dupe item
-                CartItem dupe = kd.getCartItemByName(itemName);
+                CartItem dupe = kd.getCartItemByNameAndUser(itemName, user.getMUserName());
                 if (dupe == null) {
                     //construct new cart item
                     CartItem cartItem = new CartItem(item.getMDisplayName(), item.getMCategory(), user.getMUserName(), qty, item.getMPrice());

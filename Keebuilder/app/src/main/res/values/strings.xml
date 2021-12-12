@@ -38,4 +38,7 @@
                 ||     ||
 </string>
     <string name="admin">Admin</string>
+    <string name="back_to_the_shop">Back To the shop</string>
+    <string name="buy_it">buy it!</string>
+    <string name="go_home">GO HOme</string>
 </resources>

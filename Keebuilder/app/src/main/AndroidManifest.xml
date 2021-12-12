@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Keebuilder">
         <activity
+            android:name=".Tyvm"
+            android:exported="false" />
+        <activity
             android:name=".Cart"
             android:exported="false"
-            android:parentActivityName=".Shopping"/>
+            android:parentActivityName=".Shopping" />
         <activity
             android:name=".Shopping"
             android:exported="false"
