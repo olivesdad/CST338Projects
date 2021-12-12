@@ -155,7 +155,7 @@ public class Cart extends AppCompatActivity {
         boolean keycaps = false;
         boolean stabs = false;
         boolean kb = false;
-        for (CartItem item :kd.getCartItemsByUserName(user.getMUserName())){
+        for (CartItem item :kd.getCartItemsByUserName(user.getMUserName())){ //check that we have somethign from each category
             switch (item.getCCategory().toLowerCase()){
                 case "switches":
                     switches = true;
@@ -171,9 +171,9 @@ public class Cart extends AppCompatActivity {
                     break;
             }
         }
-        if (switches && keycaps && stabs && kb){ //if this is not a full build we rely on Dialog to proceed
+        if (switches && keycaps && stabs && kb){ //every component needed found
             completeCheckout();
-        }else{
+        }else{ //cart does not have every component. we rely on alertDialog to complete transaction
             alertDialog();
         }
     }
@@ -183,7 +183,7 @@ public class Cart extends AppCompatActivity {
         startActivity(Tyvm.getIntent(getApplicationContext()));
     }
     private void alertDialog(){
-        //testing stuff
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("A Keeb build requires: {Keyboard, Keycaps, Switches, and Stabilizers} we noticed you are missing some items. Do you want to proceed?");
         builder.setPositiveButton("I know what im doing!", new DialogInterface.OnClickListener() {
@@ -203,7 +203,6 @@ public class Cart extends AppCompatActivity {
     }
     private void dumpCart(){ //erase all items belonging to the user from the db
         cartItems = kd.getCartItemsByUserName(user.getMUserName());
-
         for (CartItem item : cartItems){
             kd.delete(item);
         }
