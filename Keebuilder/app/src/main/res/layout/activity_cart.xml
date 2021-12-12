@@ -12,6 +12,7 @@
         android:layout_height="229dp"
         android:layout_marginTop="16dp"
         android:fadeScrollbars="true"
+        android:fontFamily="monospace"
         android:isScrollContainer="false"
         android:textAlignment="textStart"
         android:textColorHint="@color/black"

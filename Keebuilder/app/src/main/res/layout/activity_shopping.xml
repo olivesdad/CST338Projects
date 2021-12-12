@@ -45,21 +45,24 @@
 
     <EditText
         android:id="@+id/Shopping_Item_input_text"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
-
         android:hint="@string/item_to_add"
         android:inputType="number"
+
         android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Shopping_Item_qty_input_text"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Instock_list" />
 
     <EditText
         android:id="@+id/Shopping_Item_qty_input_text"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
@@ -67,8 +70,10 @@
         android:inputType="number"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Shopping_Item_input_text" />
+        app:layout_constraintTop_toBottomOf="@+id/Catagory_Filter_Spinner" />
+
     <Button
         android:id="@+id/Shopping_go_to_cart_button"
         android:layout_width="250dp"
@@ -84,25 +89,23 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginEnd="76dp"
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/Shopping_Item_input_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Instock_list" />
+        app:layout_constraintTop_toBottomOf="@+id/Instock_list"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/Categories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="28dp"
         android:text="@string/categoriesLabel"
-        app:layout_constraintBottom_toTopOf="@+id/Shopping_Item_input_text"
-        app:layout_constraintHorizontal_bias="0.461"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Instock_list"
- />
+        app:layout_constraintTop_toBottomOf="@+id/Instock_list" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

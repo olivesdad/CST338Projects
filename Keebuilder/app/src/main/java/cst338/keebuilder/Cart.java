@@ -51,8 +51,8 @@ public class Cart extends AppCompatActivity {
         updateQty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (updateQty()) populateCart();
-                updateNum.setText("");
+                if (updateQty()) populateCart(); //if the qty update happens we need to refresh the cart
+                updateNum.setText(""); //clear values regardless
                 newQty.setText("");
             }
         });
@@ -69,65 +69,66 @@ public class Cart extends AppCompatActivity {
         for (CartItem item : cartItems){
             price = item.getCPrice();
             qty = item.getCQty();
-            sb.append( String.format("%-20.20s",counter++ + ") " + item.getCDisplayItemname()) + "\n"
-                    + String.format("%-4.2f", price)
+            sb.append( String.format("|%-40.40s|",counter++ + ") " + item.getCDisplayItemname()) + "\n"
+                    +String.format("|%40.40s|", String.format("$%-4.2f", price)
                     + " x " + String.format("%-4.2f", qty)
-                    + " = " + String.format("%5.2f",price * qty) + "\n\n"
+                    + " = " + String.format("$%5.2f",price * qty) )+ "\n"
             );
            total += (price*qty);
         }
 
-        sb.append( "=====================\n"+
-                "Total: " + String.format("%20.2f", total));
+        sb.append( "|========================================|\n"+
+                "|Total: " + String.format("%33.2f|", total));
         cartContents.setText(sb);
     }
     private Boolean updateQty(){
         int itemNum = -1;
         int itemQty;
         CartItem updateItem;
-        try{
+        try{ //try to get integers from input
              itemNum = Integer.parseInt(updateNum.getText().toString());
              itemQty = Integer.parseInt(newQty.getText().toString());
              itemNum--;
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e){ //quit if the values are somethign other than ints (shouldnt be posible)
             Toast.makeText(getApplicationContext(), "Invalid selection/input", Toast.LENGTH_SHORT).show();
             return false;
         }
-        try {
+        try { //try to get item from cartItems table
              updateItem = cartItems.get(itemNum);
-        } catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e) { //need to catch if user put in some weird value
             Toast.makeText(getApplicationContext(), "Invalid Item Number", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (itemQty<=0) {
+        if (itemQty<=0) { //if the user put a value that is 0 or less we need to delete the item
             //delete item from cart db
             kd.delete(updateItem);
             //add stock back to store
             StoreItem temp = kd.getStoreItemByName(updateItem.getCItemName());
-            if (temp == null ){
+            if (temp == null ){ //prob shouldnt happen but if it does our logic is bad somewhere prob should erase database
                 Toast.makeText(getApplicationContext(), "Something very bad has happened, please nuke this app", Toast.LENGTH_SHORT).show();
-            } else {
+                return false;
+            } else { // update the value of the store item by adding the qty
                 temp.setMQty(temp.getMQty() + updateItem.getCQty());
-                kd.update(temp);
+                kd.update(temp); //push back to db
             }
             Toast.makeText(getApplicationContext(), updateItem.getCDisplayItemname() + " removed from cart", Toast.LENGTH_SHORT).show();
         }
-        else {
-            int delta = updateItem.getCQty() - itemQty; //this is the diff if new value is more we need to deduct from store
+        else { //value an adjustment
+            int delta = updateItem.getCQty() - itemQty; //this is the adjustment made to the cart quantity negative means we need to deduct from the stock
             //must check we have stock
-            StoreItem temp = kd.getStoreItemByName(updateItem.getCItemName());
-            if (temp.getMQty() + delta < 0 ){ //if temp goes negative we dont have enough stock
+            StoreItem temp = kd.getStoreItemByName(updateItem.getCItemName()); //get the stock item
+            if (temp.getMQty() + delta < 0 ){ //if subtracting the requested amount from stock creates a negative value, we do not have enough stock for request
                 Toast.makeText(getApplicationContext(), "Not enough stock to fulfill request", Toast.LENGTH_SHORT).show();
-                return false;
+                return false; //return do nothing
             }else {
-                temp.setMQty(temp.getMQty() + delta); //add the delta to temp
-                updateItem.setCQty(itemQty);
-                kd.update(updateItem);
-                kd.update(temp);
+                temp.setMQty(temp.getMQty() + delta); //if we can fulfill the request add the delta into stock
+                updateItem.setCQty(itemQty); //set the desired qty of cart item
+                kd.update(updateItem); //push back to db
+                kd.update(temp); //push back to db
                 Toast.makeText(getApplicationContext(), updateItem.getCDisplayItemname() + ": update quantity", Toast.LENGTH_SHORT).show();
             }
         }
-        return true;
+        return true;//a change was made return true
     }
     public static Intent getIntent(Context c){
         return new Intent(c, Cart.class);
