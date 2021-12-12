@@ -1,10 +1,12 @@
 package cst338.keebuilder;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -21,6 +23,7 @@ import cst338.keebuilder.db.KeebDao;
 public class Cart extends AppCompatActivity {
 
     TextView CartBanner, cartContents;
+    AlertDialog dialog;
     EditText updateNum, newQty;
     Button updateQty, backToStoreButton, buyItButton;
     ActionBar ab;
@@ -45,10 +48,7 @@ public class Cart extends AppCompatActivity {
         buyItButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //delete all the cart items
-                dumpCart();
-                //go to the fun page
-                startActivity(Tyvm.getIntent(getApplicationContext()));
+                checkout();
             }
         });
         backToStoreButton = findViewById(R.id.Cart_back_to_store);
@@ -149,8 +149,61 @@ public class Cart extends AppCompatActivity {
         }
         return true;//a change was made return true
     }
+
+    private void checkout(){
+        boolean switches = false;
+        boolean keycaps = false;
+        boolean stabs = false;
+        boolean kb = false;
+        for (CartItem item :kd.getCartItemsByUserName(user.getMUserName())){
+            switch (item.getCCategory().toLowerCase()){
+                case "switches":
+                    switches = true;
+                    break;
+                case "keycaps":
+                    keycaps = true;
+                    break;
+                case "stabilizers":
+                    stabs = true;
+                    break;
+                case "keyboard":
+                    kb = true;
+                    break;
+            }
+        }
+        if (switches && keycaps && stabs && kb){ //if this is not a full build we rely on Dialog to proceed
+            completeCheckout();
+        }else{
+            alertDialog();
+        }
+    }
+    private void completeCheckout(){
+        dumpCart();
+        //go to the fun page
+        startActivity(Tyvm.getIntent(getApplicationContext()));
+    }
+    private void alertDialog(){
+        //testing stuff
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("A Keeb build requires: {Keyboard, Keycaps, Switches, and Stabilizers} we noticed you are missing some items. Do you want to proceed?");
+        builder.setPositiveButton("I know what im doing!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                completeCheckout();
+            }
+        });
+        builder.setNegativeButton("Don't check out yet", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        dialog = builder.create();
+        dialog.show();
+    }
     private void dumpCart(){ //erase all items belonging to the user from the db
         cartItems = kd.getCartItemsByUserName(user.getMUserName());
+
         for (CartItem item : cartItems){
             kd.delete(item);
         }

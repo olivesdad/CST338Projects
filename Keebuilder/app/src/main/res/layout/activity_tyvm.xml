@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D8DA09E1"
-    android:backgroundTint="#040404"
+    android:background="#23780F7C"
+    android:backgroundTint="#B612A1"
     android:backgroundTintMode="add"
     tools:context=".Tyvm">
 
