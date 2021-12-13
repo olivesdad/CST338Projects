@@ -69,7 +69,10 @@ public class Add_store_items extends AppCompatActivity {
         //see if there is already an entry
         if(!(kd.getStoreItemByName(name)==null)){
             Toast.makeText(getApplicationContext(), name + " already exists. Please use update item instead.", Toast.LENGTH_SHORT).show();
-        } else {
+        } else if ( qty <=0 ){
+            Toast.makeText(getApplicationContext(), "Invalid quantity", Toast.LENGTH_SHORT).show();
+        }
+        else {
             StoreItem item = new StoreItem(name,displayName, desc, category, qty, price);
             kd.insert(item);
             Toast.makeText(getApplicationContext(), name + " successfully added to store.", Toast.LENGTH_SHORT).show();

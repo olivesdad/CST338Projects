@@ -156,7 +156,7 @@ public class Cart extends AppCompatActivity {
         boolean stabs = false;
         boolean kb = false;
         for (CartItem item :kd.getCartItemsByUserName(user.getMUserName())){ //check that we have somethign from each category
-            switch (item.getCCategory().toLowerCase()){
+            switch (item.getCCategory().toLowerCase().trim()){
                 case "switches":
                     switches = true;
                     break;
@@ -166,7 +166,7 @@ public class Cart extends AppCompatActivity {
                 case "stabilizers":
                     stabs = true;
                     break;
-                case "keyboard":
+                case "keyboards":
                     kb = true;
                     break;
             }

@@ -149,7 +149,7 @@ public class Shopping extends AppCompatActivity {
         StoreItem item = kd.getStoreItemByName(itemName);
         if (item != null){
             //check the qty is ok
-            if (qty > 0 && qty < item.getMQty()){
+            if (qty > 0 && qty <= item.getMQty()){
                 //deduct the qty from item
                 item.setMQty(item.getMQty() - qty);
                 //check for dupe item
